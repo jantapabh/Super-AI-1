@@ -19,6 +19,7 @@
 
 nameList = ['winn', 'thanarak', 'somchai', 'ricky', 'tao', 'wanida', 'peerapon']
 
+
 def countname(nameList):
     countlist = []
     for name in nameList:
