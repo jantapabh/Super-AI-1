@@ -1,15 +1,25 @@
 # Test 1
-#
-
 import numpy as np
 
 a = np.arange(100)
 a.reshape(10,10)
-print(a)
-
 b = np.array([[1,0,0],[0,1,0],[0,0,1]])
-print(b)
-
+def conv(oimg,filt):
+  fh,fw = filt.shape
+  ih,iw = oimg.shape 
+  newimg=[]
+  for j in range(0,ih-fh+1):
+    newrow=[] #Column loop
+    for i in range(0,iw-fw+1):
+      #Row loop
+      sumimg = oimg[j:j+fh,i:i+fw]
+      sumcov = (sumimg*filt).sum()
+      #print(sumcov)
+      newrow.append(sumcov)
+    newimg.append(newrow)  
+  return newimg
+ 
+ conv(a,b)
 
 
 
