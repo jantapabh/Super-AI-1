@@ -24,15 +24,15 @@ import numpy as np
 
 #CODE2
 
-# def conv(img, kernel):
-#     (img_h, img_w) = img.shape
-#     (kernel_h, kernel_w) = kernel.shape
-#     img_temp = np.zeros((img_h - kernel_h + 1, img_w - kernel_w + 1), dtype='int16')
-#     for i in range(img_h - kernel_h + 1):
-#         for j in range(img_w - kernel_w + 1):
-#             roi = img[i:i+kernel_h, j:j+kernel_w]
-#             value = (roi * kernel).sum()
-#             img_temp[i, j] = value
-#     return img_temp
-# img_filtered = conv(img,kernel)
-# img_filtered
+def conv(img, kernel):
+    (img_h, img_w) = img.shape
+    (kernel_h, kernel_w) = kernel.shape
+    img_temp = np.zeros((img_h - kernel_h + 1, img_w - kernel_w + 1), dtype='int16')
+    for i in range(img_h - kernel_h + 1):
+        for j in range(img_w - kernel_w + 1):
+            roi = img[i:i+kernel_h, j:j+kernel_w]
+            value = (roi * kernel).sum()
+            img_temp[i, j] = value
+    return img_temp
+img_filtered = conv(img,kernel)
+img_filtered
