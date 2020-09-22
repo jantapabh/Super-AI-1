@@ -25,7 +25,6 @@ import numpy as np
 #CODE2
 
 
-
 def conv(img, kernel):
     (img_h, img_w) = img.shape
     (kernel_h, kernel_w) = kernel.shape
